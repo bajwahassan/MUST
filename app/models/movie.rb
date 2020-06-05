@@ -1,4 +1,5 @@
 class Movie < ApplicationRecord
-  has_many :genres
-  belongs_to :watchlist
+  belongs_to :watchlist, optional: true
+	has_many :movie_genres
+	has_many :genres, through: :movie_genres
 end
