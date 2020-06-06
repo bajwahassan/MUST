@@ -1,0 +1,28 @@
+<header>
+  <% if @movie.errors.any?  %>
+    <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %><br>
+</header>
+
+
+<%= form_for @movie do |f| %>
+  <%= f.hidden_field :watchlist_id, value: @watchlist.id %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+
+  <%= f.label :genre %>
+  <%= f.text_field :genre %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.label :year %>
+  <%= f.text_field :year %><br>
+
+  <%= f.submit "Add Movie" %>
+
+<% end %>

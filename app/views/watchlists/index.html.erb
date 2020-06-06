@@ -1,0 +1,10 @@
+<h2> welcome <%=@user.name  %> !</h2>
+<%= link_to "create new watchlist", new_user_watchlist_path, :method => "get"%>
+<div style="position: absolute; right: 4px; top: 4px; text-align: right">
+    <%= link_to "Log out", logout_path %>
+</div>
+
+<p><% @watchlists.each do |w| %></p>
+
+  <li><%= link_to w.name, user_watchlist_path(@user, w) %> - <%= w.description %></li>
+<%end %>

@@ -1,0 +1,10 @@
+<h1>new watchlist</h1>
+<%= form_for @watchlist do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %><br>
+
+  <%= f.submit "Create Watchlist" %>
+<%end %>
