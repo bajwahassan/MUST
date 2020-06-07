@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   post "/watchlist/sorted", to: 'watchlists#sort_year'
 
+  get '/auth/facebook/callback' => 'sessions#create_by_facebook'
+
 end
