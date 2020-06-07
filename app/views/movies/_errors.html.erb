@@ -1,0 +1,9 @@
+<header>
+  <% if @movie.errors.any?  %>
+    <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %><br>
+</header>
