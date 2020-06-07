@@ -26,4 +26,4 @@ Bug reports are welcome on GitHub at https://github.com/hbajwaa/MUST.
 ## License
 
 This application is available as open source under the terms of. See
-[LICENSE.md](LICENSE.md) for details.
+[LICENSE](LICENSE) for details.
