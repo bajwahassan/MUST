@@ -38,7 +38,6 @@ class MoviesController < ApplicationController
     redirect_to user_watchlist_path(current_user, params[:watchlist_id])
   end
 
-
   private
   def movie_params
     params.require(:movie).permit(:title, :genre, :description, :year, :watchlist_id)
