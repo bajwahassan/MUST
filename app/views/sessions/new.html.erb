@@ -1,6 +1,8 @@
+
 <% if flash[:alert] %>
     <%= flash[:alert] %>
  <% end %>
+
 
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.label :email %>
@@ -11,3 +13,7 @@
 
   <%= f.submit "Login" %>
 <% end %>
+<style media="screen">
+body {
+  background-color:#F2FEFF
+}

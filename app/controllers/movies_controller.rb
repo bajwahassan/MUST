@@ -2,10 +2,8 @@ class MoviesController < ApplicationController
 
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
   def new
-
     @watchlist = Watchlist.find_by_id(params[:watchlist_id])
     @movie = Movie.new
-
   end
 
   def create
