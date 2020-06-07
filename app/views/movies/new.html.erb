@@ -1,14 +1,4 @@
-<header>
-  <% if @movie.errors.any?  %>
-    <ul>
-    <% @movie.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  <% end %><br>
-</header>
-
-
+<%= render "errors" %>
 <%= form_for @movie do |f| %>
   <%= f.hidden_field :watchlist_id, value: @watchlist.id %>
   <%= f.label :title %>

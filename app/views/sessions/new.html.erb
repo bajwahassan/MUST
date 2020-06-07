@@ -1,3 +1,7 @@
+<% if flash[:alert] %>
+    <%= flash[:alert] %>
+ <% end %>
+
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email  %><br>

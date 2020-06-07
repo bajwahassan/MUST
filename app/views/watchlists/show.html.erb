@@ -22,14 +22,25 @@
 </style>
 
 <div style="position: absolute; right: 4px; top: 4px; text-align: right">
-    <%= link_to "Log out", logout_path %>
+    <%= button_to "Log out", logout_path, :method => "get" %>
 </div>
 
-<div>
-  <h2><%= @watchlist.name %></h2>
-  <h4><%= link_to "Add Movie", new_watchlist_movie_path(@watchlist)%></h4>
-  <h4><%= link_to "Back to lists", user_watchlists_path(@watchlist.user)	 %></h4>
+<div style="position: absolute; right: 9px; top: 80px; text-align: right">
+  <%= button_to "Sort By Year", watchlist_sorted_path(@watchlist)%>
 </div>
+
+
+  <h2><%= @watchlist.name %></h2>
+
+  <div >
+    <%= button_to "Add Movie", new_watchlist_movie_path(@watchlist), :method => "get"%>
+  </div>
+
+  <div >
+    <%= button_to "Back to lists", user_watchlists_path(@watchlist.user), :method => "get"%>
+  </div><br>
+
+
 
 <table>
 
@@ -52,7 +63,7 @@
         <%= link_to "edit", edit_watchlist_movie_path(@watchlist, movie) %>
         <%= link_to "delete", watchlist_movie_path(@watchlist, movie), :method => "delete" %>
       </td>
-      
+
     </tr>
   <% end %>
 </table>
