@@ -1,34 +1,25 @@
 <style>
-
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
     }
-
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-
-    body {
-      background-color:#e6e6e6
-    }
+    body {background-image:url('/images/bg2.jpg')}
 </style>
 
 <div style="position: absolute; right: 4px; top: 4px; text-align: right">
-    <%= button_to "Log out", logout_path, :method => "get" %>
+    <%= button_to "Log out", logout_path, :method => "get", class: "btn btn-outline-info" %>
 </div>
 
   <h2><%= @movies.first.watchlist.name %></h2>
 
   <div >
-    <%= button_to "Back to lists", user_watchlists_path(@movies.first.watchlist.user), :method => "get"%>
+    <%= button_to "Back to lists", user_watchlists_path(@movies.first.watchlist.user), :method => "get", class: "btn btn-outline-info"%>
   </div><br>
 
 

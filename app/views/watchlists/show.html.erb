@@ -1,46 +1,37 @@
 <style>
-
     table {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       width: 100%;
     }
-
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-
-    tr:nth-child(even) {
+    /* tr:nth-child(even) {
       background-color: #dddddd;
-    }
-
-    body {
-      background-color:#F2F5F5
-    }
+    } */
+    body {background-image:url('/images/bg2.jpg')}
 </style>
 
 <div style="position: absolute; right: 4px; top: 4px; text-align: right">
-    <%= button_to "Log out", logout_path, :method => "get" %>
+    <%= button_to "Log out", logout_path, :method => "get", class: "btn btn-dark" %>
 </div>
 
 <div style="position: absolute; right: 9px; top: 80px; text-align: right">
-  <%= button_to "Sort By Year", watchlist_sorted_path(@watchlist)%>
+  <%= button_to "Sort By Year", watchlist_sorted_path(@watchlist), class: "btn btn-outline-info"%>
 </div>
 
+<h2><%= @watchlist.name %></h2>
 
-  <h2><%= @watchlist.name %></h2>
+<div >
+  <%= button_to "Add Movie", new_watchlist_movie_path(@watchlist), :method => "get", class: "btn btn-outline-info"%>
+</div>
 
-  <div >
-    <%= button_to "Add Movie", new_watchlist_movie_path(@watchlist), :method => "get"%>
-  </div>
-
-  <div >
-    <%= button_to "Back to lists", user_watchlists_path(@watchlist.user), :method => "get"%>
-  </div><br>
-
-
+<div >
+  <%= button_to "Back to lists", user_watchlists_path(@watchlist.user), :method => "get", class: "btn btn-outline-info"%>
+</div><br>
 
 <table>
 
@@ -59,9 +50,10 @@
       <td><%= movie.genre %></td>
       <td><%= movie.description %></td>
       <td><%= movie.year %></td>
-      <td>
-        <%= link_to "edit", edit_watchlist_movie_path(@watchlist, movie) %>
-        <%= link_to "delete", watchlist_movie_path(@watchlist, movie), :method => "delete" %>
+      <td class="btn-group btn-group-sm" role="group" aria-label="First group" >
+
+        <%= button_to "edit", edit_watchlist_movie_path(@watchlist, movie), :method => "get", class: "btn btn-secondary" %>
+        <%= button_to "delete", watchlist_movie_path(@watchlist, movie), :method => "delete", class: "btn btn-secondary" %>
       </td>
 
     </tr>

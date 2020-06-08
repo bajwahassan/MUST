@@ -1,8 +1,12 @@
 <style media="screen">
 body {
-  background-color:#F2FEFF
+background-color:#085A7E
 }
 </style>
-<%= button_to "Sign Up", new_user_path, :method => "get"%>
-<%= button_to('Log in with Facebook!', '/auth/facebook', :method => "get") %>
-<%= button_to "Log in", login_path, :method => "get" %>
+
+
+<p><img src="/images/movies.png" style="width:100%;"></p>
+<center><p class="lead">MUST-- Movies tracker app. Never miss a movie again!</p></center>
+<%= button_to "Sign Up", new_user_path, :method => "get", class: "btn btn-info btn-block"%>
+<%= button_to "Log In", login_path, :method => "get", class: "btn btn-success btn-block" %>
+<%= button_to('Log in with Facebook!', '/auth/facebook', :method => "get", class: "btn btn-primary btn-block") %>
