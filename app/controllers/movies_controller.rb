@@ -7,7 +7,6 @@ class MoviesController < ApplicationController
   end
 
   def create
-
     @movie = Movie.new(movie_params)
     @watchlist = Watchlist.find_by_id(params[:movie][:watchlist_id])
     if @movie.save

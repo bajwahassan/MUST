@@ -7,19 +7,24 @@
     </ul>
   <% end %><br>
 </header>
+<style media="screen">
+  body {
+    background-image:url('/images/bg2.jpg');
+  }
+</style>
 
 <h1>Sign Up</h1>
 <%= form_for @user do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class:"form-control" %>
 
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, class:"form-control" %>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password, class:"form-control" %><br>
 
-  <%= f.submit "Sign Up" %>
+  <%= f.submit "Create Account", class: "btn btn-primary" %>
 <%end %>
 
 <style media="screen">

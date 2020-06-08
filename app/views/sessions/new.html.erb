@@ -1,19 +1,22 @@
-
 <% if flash[:alert] %>
     <%= flash[:alert] %>
  <% end %>
+ <style media="screen">
+   body {
+     background-image:url('/images/bg2.jpg');
+   }
+ </style>
 
 
+<h2>Login Below</h2><br>
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.label :email %>
-  <%= f.text_field :email  %><br>
+  <%= f.text_field :email, class:"form-control"  %>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <br>
 
   <%= f.label :password %>
-  <%= f.password_field :password %><br>
+  <%= f.password_field :password, class:"form-control" %><br>
 
-  <%= f.submit "Login" %>
+  <%= f.submit "Login", class: "btn btn-primary" %>
 <% end %>
-<style media="screen">
-body {
-  background-color:#F2FEFF
-}

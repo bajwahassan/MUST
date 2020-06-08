@@ -1,13 +1,11 @@
 <style media="screen">
-body {
-  background-color:#F2FEFF
-}
+  body {background-image:url('/images/bg2.jpg')}
 </style>
 
 <h2> welcome <%=@user.name  %> !</h2>
-<%= link_to "create new watchlist", new_user_watchlist_path, :method => "get"%>
+<%= button_to "create new watchlist", new_user_watchlist_path, :method => "get", class: "btn btn-outline-info"%>
 <div style="position: absolute; right: 4px; top: 4px; text-align: right">
-    <%= button_to "Log out", logout_path, :method => "get"%>
+    <%= button_to "Log out", logout_path, :method => "get", class: "btn btn-outline-info"%>
 </div>
 
 <p><% @watchlists.each do |w| %></p>

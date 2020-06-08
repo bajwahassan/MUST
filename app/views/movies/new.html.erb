@@ -2,17 +2,17 @@
 <%= form_for @movie do |f| %>
   <%= f.hidden_field :watchlist_id, value: @watchlist.id %>
   <%= f.label :title %>
-  <%= f.text_field :title %><br>
+  <%= f.text_field :title, class:"form-control" %><br>
 
   <%= f.label :genre %>
-  <%= f.text_field :genre %><br>
+  <%= f.text_field :genre, class:"form-control" %><br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %><br>
+  <%= f.text_field :description, class:"form-control" %><br>
 
   <%= f.label :year %>
-  <%= f.text_field :year %><br>
+  <%= f.text_field :year, class:"form-control" %><br>
 
-  <%= f.submit "Add Movie" %>
+  <%= f.submit "Add Movie",class: "btn btn-primary" %>
 
 <% end %>
