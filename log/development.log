@@ -23881,3 +23881,277 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 8652)
 
 
+Started GET "/" for ::1 at 2020-06-08 00:46:16 -0400
+  [1m[35m (7.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 694)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 156.1ms | ActiveRecord: 0.0ms | Allocations: 20264)
+
+
+Started GET "/login" for ::1 at 2020-06-08 00:53:23 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2198)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 21.0ms | ActiveRecord: 1.7ms | Allocations: 14001)
+
+
+Started GET "/users/new" for ::1 at 2020-06-08 00:53:33 -0400
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1367)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 19.9ms | ActiveRecord: 0.6ms | Allocations: 14940)
+
+
+Started GET "/login" for ::1 at 2020-06-08 00:58:16 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 430)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.2ms | Allocations: 8871)
+
+
+Started POST "/login" for ::1 at 2020-06-08 00:58:36 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"LCZNxzb1V4lxNedYJCiIkMMBEijsak59Gg7/fyUfG0kpu2/AagEyLKxgXZANQPR9FMZglCl2O1FItbYfbsU7PQ==", "session"=>{"email"=>"hassan@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hassan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/12/watchlists
+Completed 302 Found in 309ms (ActiveRecord: 0.3ms | Allocations: 1292)
+
+
+Started GET "/users/12/watchlists" for ::1 at 2020-06-08 00:58:36 -0400
+Processing by WatchlistsController#index as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/index.html.erb within layouts/application
+  [1m[36mWatchlist Load (0.8ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/views/watchlists/index.html.erb:11
+  Rendered watchlists/index.html.erb within layouts/application (Duration: 31.3ms | Allocations: 6743)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 40.7ms | ActiveRecord: 2.4ms | Allocations: 18917)
+
+
+Started GET "/users/12/watchlists/16" for ::1 at 2020-06-08 00:58:42 -0400
+Processing by WatchlistsController#show as HTML
+  Parameters: {"user_id"=>"12", "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:23:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:24:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/show.html.erb within layouts/application
+  [1m[36mMovie Load (7.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ?[0m  [["watchlist_id", 16]]
+  ↳ app/views/watchlists/show.html.erb:46
+  Rendered watchlists/show.html.erb within layouts/application (Duration: 102.7ms | Allocations: 15031)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 143ms (Views: 112.0ms | ActiveRecord: 9.3ms | Allocations: 25402)
+
+
+Started GET "/watchlists/16/movies/new" for ::1 at 2020-06-08 00:58:56 -0400
+Processing by MoviesController#new as HTML
+  Parameters: {"watchlist_id"=>"16"}
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:5:in `new'
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_errors.html.erb (Duration: 0.8ms | Allocations: 202)
+  Rendered movies/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1994)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.1ms | Allocations: 10951)
+
+
+Started POST "/movies" for ::1 at 2020-06-08 00:59:24 -0400
+Processing by MoviesController#create as HTML
+  Parameters: {"authenticity_token"=>"p80EnB9W355zIDA3l8vFgWar91r43RvF2q0I6HmxUA6iUCabQ6K6O651iv++o7lssWyF5j3BbumIFkGIMmtweg==", "movie"=>{"watchlist_id"=>"16", "title"=>"Kemal", "genre"=>"comedy", "description"=>"greatest homo", "year"=>"1995"}, "commit"=>"Add Movie"}
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mMovie Create (1.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "genre", "description", "year", "watchlist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Kemal"], ["genre", "comedy"], ["description", "greatest homo"], ["year", 1995], ["watchlist_id", 16], ["created_at", "2020-06-08 04:59:24.670899"], ["updated_at", "2020-06-08 04:59:24.670899"]]
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:12:in `create'
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:13:in `create'
+Redirected to http://localhost:3000/watchlists/16
+Completed 302 Found in 28ms (ActiveRecord: 3.2ms | Allocations: 4804)
+
+
+Started GET "/watchlists/16" for ::1 at 2020-06-08 00:59:24 -0400
+Processing by WatchlistsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:23:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:24:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ?[0m  [["watchlist_id", 16]]
+  ↳ app/views/watchlists/show.html.erb:46
+  Rendered watchlists/show.html.erb within layouts/application (Duration: 28.2ms | Allocations: 6654)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.7ms | Allocations: 16641)
+
+
+Started GET "/logout" for ::1 at 2020-06-08 00:59:32 -0400
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1023)
+
+
+Started GET "/" for ::1 at 2020-06-08 00:59:32 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 7931)
+
+
+Started GET "/login" for ::1 at 2020-06-08 01:01:37 -0400
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 429)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.1ms | Allocations: 8848)
+
+
+Started POST "/login" for ::1 at 2020-06-08 01:01:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"YZdiHGDOpOi1jAJxK+J6WQDFMVY3OBsJ09zxgst5TIm/6rsGLBfkxKvch10CGMjpx/BBOvNiLaYpE3vqfe2Dpg==", "session"=>{"email"=>"hassan@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "hassan@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/users/12/watchlists
+Completed 302 Found in 275ms (ActiveRecord: 0.2ms | Allocations: 1121)
+
+
+Started GET "/users/12/watchlists" for ::1 at 2020-06-08 01:01:49 -0400
+Processing by WatchlistsController#index as HTML
+  Parameters: {"user_id"=>"12"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/index.html.erb within layouts/application
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."user_id" = ?[0m  [["user_id", 12]]
+  ↳ app/views/watchlists/index.html.erb:11
+  Rendered watchlists/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.2ms | Allocations: 9874)
+
+
+Started GET "/users/12/watchlists/16" for ::1 at 2020-06-08 01:01:51 -0400
+Processing by WatchlistsController#show as HTML
+  Parameters: {"user_id"=>"12", "id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mWatchlist Load (0.2ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:23:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:24:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ?[0m  [["watchlist_id", 16]]
+  ↳ app/views/watchlists/show.html.erb:46
+  Rendered watchlists/show.html.erb within layouts/application (Duration: 19.2ms | Allocations: 6642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 48.0ms | ActiveRecord: 1.1ms | Allocations: 16621)
+
+
+Started DELETE "/watchlists/16/movies/54" for ::1 at 2020-06-08 01:01:54 -0400
+Processing by MoviesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5sMpTAtyMSpmz2BdbMilBpj/tKNNLh3EUxXOdl+dOgf9Tng3OiWkVcEGkK8Nkw4Ddqpb9cBJdJQT4QM0/cUaWQ==", "watchlist_id"=>"16", "id"=>"54"}
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:44:in `set_movie'
+  [1m[36mCACHE Movie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:34:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/movies_controller.rb:34:in `destroy'
+  [1m[36mMovie Destroy (1.4ms)[0m  [1m[31mDELETE FROM "movies" WHERE "movies"."id" = ?[0m  [["id", 54]]
+  ↳ app/controllers/movies_controller.rb:34:in `destroy'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/movies_controller.rb:34:in `destroy'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://localhost:3000/users/12/watchlists/16
+Completed 302 Found in 16ms (ActiveRecord: 3.2ms | Allocations: 4306)
+
+
+Started GET "/users/12/watchlists/16" for ::1 at 2020-06-08 01:01:54 -0400
+Processing by WatchlistsController#show as HTML
+  Parameters: {"user_id"=>"12", "id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mWatchlist Load (0.3ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:23:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:24:in `show'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering watchlists/show.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ?[0m  [["watchlist_id", 16]]
+  ↳ app/views/watchlists/show.html.erb:46
+  Rendered watchlists/show.html.erb within layouts/application (Duration: 19.1ms | Allocations: 6401)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 48.5ms | ActiveRecord: 1.1ms | Allocations: 16383)
+
+
+Started POST "/watchlist/sorted.16" for ::1 at 2020-06-08 01:01:58 -0400
+Processing by WatchlistsController#sort_year as 
+  Parameters: {"authenticity_token"=>"EKnYBanMaLtTquF7L2BNJIKOXCtfnwUrr2MZDI0lfr/O1AEf5RUol036ZFcGmv+URbssR5vFM4RVrJNkO7GxkA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mWatchlist Load (0.1ms)[0m  [1m[34mSELECT "watchlists".* FROM "watchlists" WHERE "watchlists"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/watchlists_controller.rb:30:in `sort_year'
+  Rendering watchlists/sorted_watchlist.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ? ORDER BY year desc LIMIT ?[0m  [["watchlist_id", 16], ["LIMIT", 1]]
+  ↳ app/views/watchlists/sorted_watchlist.html.erb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/watchlists/sorted_watchlist.html.erb:22
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."watchlist_id" = ? ORDER BY year desc[0m  [["watchlist_id", 16]]
+  ↳ app/views/watchlists/sorted_watchlist.html.erb:35
+  Rendered watchlists/sorted_watchlist.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 44.8ms | ActiveRecord: 1.3ms | Allocations: 12409)
+
+
+Started GET "/logout" for ::1 at 2020-06-08 01:02:09 -0400
+Processing by SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1025)
+
+
+Started GET "/" for ::1 at 2020-06-08 01:02:09 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 7932)
+
+
