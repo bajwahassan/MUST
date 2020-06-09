@@ -1,0 +1,44 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    body {background-image:url('/images/bg2.jpg')}
+</style>
+<br>
+<div >
+  <%= button_to "Back to lists", user_watchlists_path(current_user), :method => "get", class: "btn btn-outline-info"%>
+</div><br>
+
+<%= form_tag(movies_path, method: "get") do%>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag "search Genre", class: "btn btn-dark"%>
+<% end  %><br>
+
+
+<table>
+
+  <tr>
+    <th>Title</th>
+    <th>Genre</th>
+    <th>description</th>
+    <th>Year</th>
+  </tr>
+
+  <% @movies.each.with_index do |movie| %>
+    <tr>
+
+      <td><%= movie.title %></td>
+      <td><%= movie.genre %></td>
+      <td><%= movie.description %></td>
+      <td><%= movie.year %></td>
+
+    </tr>
+  <% end %>
+</table>
