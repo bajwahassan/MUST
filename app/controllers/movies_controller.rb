@@ -1,6 +1,15 @@
 class MoviesController < ApplicationController
 
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+
+  def index
+    if params[:search]
+      @movies = Movie.search(params[:search])
+    else
+      @movies =Movie.all
+    end
+  end
+
   def new
     @watchlist = Watchlist.find_by_id(params[:watchlist_id])
     @movie = Movie.new
@@ -37,7 +46,7 @@ class MoviesController < ApplicationController
 
   private
   def movie_params
-    params.require(:movie).permit(:title, :genre, :description, :year, :watchlist_id)
+    params.require(:movie).permit(:title, :genre, :description, :year, :watchlist_id, :search)
   end
 
   def set_movie
