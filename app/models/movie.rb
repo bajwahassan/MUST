@@ -6,4 +6,7 @@ class Movie < ApplicationRecord
   validates :title, presence: true
 
   scope :by_year, -> { order("year desc")}
+  def self.search(genre)
+    movies_by_genre = Movie.where(genre: genre)
+  end
 end
