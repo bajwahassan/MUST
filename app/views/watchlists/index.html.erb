@@ -4,6 +4,7 @@
 
 <h2> welcome <%=@user.name  %> !</h2>
 <%= button_to "create new watchlist", new_user_watchlist_path, :method => "get", class: "btn btn-outline-info"%>
+<%= button_to "All Movies", movies_path, method: :get, class: "btn btn-outline-info"  %>
 <div style="position: absolute; right: 4px; top: 4px; text-align: right">
     <%= button_to "Log out", logout_path, :method => "get", class: "btn btn-outline-info"%>
 </div>
