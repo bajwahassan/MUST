@@ -19,6 +19,10 @@ Then run the app in a local server:
 $ rails s
 ```
 
+## Blog
+
+https://hbajwaa.github.io/rails_portfolio_project
+
 # Contributing
 This is an open source app, feel free to use it or suggest/add any features.
 Bug reports are welcome on GitHub at https://github.com/hbajwaa/MUST.
