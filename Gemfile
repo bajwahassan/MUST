@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 group :production do
   gem "pg"
 end
+gem "figaro"
 # Use Puma as the app server
 gem 'puma', '~> 4.3.5'
 # Use SCSS for stylesheets
